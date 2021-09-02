@@ -19,26 +19,26 @@
  * along with S-Update-Server.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-use SUpdateServer\Internal\CheckMethod;
+namespace SUpdateServer\Checking;
 
 /**
  * The MD5 Check Method, uses the MD5s of the files
  * to check them.
  *
  * @author TheShark34
- * @package S-Update-Server\Internal
- * @version 3-(Base-2.0.0-BETA)
+ * @package S-Update-Server\Checking
+ * @version 3.0.0-BETA
  */
  class MD5CheckMethod extends CheckMethod {
 
     public function getName() {
-        return "md5-check-method";
+        return "MD5 Check Method";
     }
 
     public function createFileInfos($file) {
         return array(
             "fileRelativePath" => $file,
-            "md5" => md5_file(SUpdateServer::FILES_DIRECTORY . "/" . $file)
+            "md5" => md5_file(\ListFiles::FILES_FOLDER . $file)
         );
     }
 

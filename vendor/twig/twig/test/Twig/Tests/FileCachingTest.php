@@ -38,9 +38,6 @@ class Twig_Tests_FileCachingTest extends PHPUnit_Framework_TestCase
         $this->removeDir($this->tmpDir);
     }
 
-    /**
-     * @group legacy
-     */
     public function testWritingCacheFiles()
     {
         $name = 'index';
@@ -51,9 +48,6 @@ class Twig_Tests_FileCachingTest extends PHPUnit_Framework_TestCase
         $this->fileName = $cacheFileName;
     }
 
-    /**
-     * @group legacy
-     */
     public function testClearingCacheFiles()
     {
         $name = 'index2';
